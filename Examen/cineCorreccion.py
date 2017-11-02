@@ -6,6 +6,8 @@ entradasVendidas = 0
 numFila = 0
 numLocalidad = 0
 id = 0
+opcion = 1
+precio = 5
 
 cartelera = {
     "Lunes" : "Terminator 2",
@@ -18,8 +20,6 @@ cartelera = {
 }
 
 # Clases
-
-
 class Pelicula(object):
     def __init__(self, entrada, id, titulo):
         self.__entrada = entrada
@@ -109,7 +109,7 @@ matriz = []
 for i in range(numFilas):  # Crea la matriz asignando el num de columnas a cada una de las filas
     matriz.append([])
     for j in range(numColumnas):
-        matriz[i].append(None)
+        matriz[i].append("")
 
 
 # Ejecución
@@ -144,7 +144,7 @@ while opcion != 0:
             entrada = Entrada(id, precio, numFila, numLocalidad)  # Instancia de la entrada
 
             if not matriz[numFila][numLocalidad]:  # Comprueba si la celda de la matriz está vacía
-                matriz[numFila][numLocalidad].append(entrada)
+                matriz[numFila][numLocalidad] = "X"
 
         for entrada in matriz:
             print entrada
