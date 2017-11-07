@@ -13,9 +13,8 @@ class autobus(v):
         self.__numAsientos = numAsientos
 
     def precioAPagar(self):
-        importe = 0.04
         tasaAsientos = 0.25
-        return importe * self.get_tiempoEstacionado() + tasaAsientos * self.get_numAsientos()
+        return super(autobus, self).precioAPagar() + tasaAsientos * self.get_numAsientos()
 
     def __str__(self):
-        return super.__str__() + " Número de asientos: %s" % self.get_numAsientos()
+        return super(self).__str__() + " Número de asientos: %s" % self.get_numAsientos()
